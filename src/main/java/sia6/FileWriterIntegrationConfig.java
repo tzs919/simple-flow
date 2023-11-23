@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.annotation.Transformer;
+import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.dsl.MessageChannels;
@@ -42,6 +43,11 @@ public class FileWriterIntegrationConfig {
     handler.setAppendNewLine(true);
     return handler;
   }
+
+//  @Bean
+//  public MessageChannel fileWriterChannel() {
+//    return new DirectChannel();
+//  }
 
   //
   // DSL Configuration
